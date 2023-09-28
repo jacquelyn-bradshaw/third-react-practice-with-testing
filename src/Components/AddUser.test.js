@@ -2,7 +2,7 @@ import {render, screen} from "@testing-library/react"
 import user from "@testing-library/user-event"
 import AddUser from "./AddUser"
 
-describe("Add User Component", () => {
+describe("AddUser Component", () => {
   test("renders Add User form", () => {
     render(<AddUser/>)
     const nameInput = screen.getByRole("textbox", {name: /name/i})
@@ -16,6 +16,7 @@ describe("Add User Component", () => {
     expect(nameLabel).toBeInTheDocument()
     expect(ageLabel).toBeInTheDocument()
   })
+
   test("it calls onAddUser when the form is submitted", () => {
     const mock = jest.fn()
     render(<AddUser onAddUser={mock}/> )
